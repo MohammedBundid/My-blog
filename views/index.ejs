@@ -1,0 +1,33 @@
+<div class="author">
+    <h1 class="author__heading">hi am mohammed</h1>
+    <p class="author__body">web developer, game developer and 3d artist</p>
+
+</div>
+
+<img src="/img/blog-banner.jpg" alt="a 3d computer setup" class="hero-image" width="1920" height="1080">
+
+
+<section class="articles">
+    <h2 class="article__heading">latest posts</h2>
+
+    <ul class="article-ul">
+
+        <% data.forEach(post => { %>
+            <li>
+                <a href="/post/<%= post._id %>">
+                    <span><%= post.title %></span>
+                    <span class="article-list__date"><%= post.createdAt.toDateString() %></span>
+                </a>
+            </li>
+        <% }) %>
+     
+    </ul>
+
+    <% if (nextPage !== null) { %>
+        <a href="/?page=<%= nextPage %>" class="pagination">&lt; view older posts</a>
+    <% } %>
+
+    
+
+
+</section>
